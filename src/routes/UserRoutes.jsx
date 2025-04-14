@@ -1,17 +1,17 @@
 import React from 'react'
-import UserDashboard from '../components/userComponents/UserDashboard'
-import { Route, Routes } from 'react-router'
+import { Route, Routes } from 'react-router-dom'
 import UserProfile from '../components/userComponents/UserProfile'
-import SignIn from '../components/authComponents/SignIn'
-import SignUp from '../components/authComponents/SignUp'
 import UserLayout from '../layouts/userLayout'
-import HomePage from '../components/HomePage'
-import AboutPage from '../components/AboutPage'
-import ContactPage from '../components/ContactPage'
+import AboutPage from '../pages/AboutPage'
+import ContactPage from '../pages/ContactPage'
+import HomePage from '../pages/HomePage'
+import SignIn from '../pages/authPages/SignIn'
+import SignUp from '../pages/authPages/SignUp'
 
 
 function UserRoutes() {
   return (
+
     <Routes>
       <Route path='/' element={< UserLayout />} >
         <Route index element={<HomePage />} />
@@ -22,6 +22,7 @@ function UserRoutes() {
         <Route path='contact' element={<ContactPage />} />
       </Route>
     </Routes>
+
   )
 }
 

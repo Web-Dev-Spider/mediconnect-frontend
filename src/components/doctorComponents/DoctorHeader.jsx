@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-function Header() {
+
+function DoctorHeader() {
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar bg-green-200-300 shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,20 +30,20 @@ function Header() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={'/'}>Home</Link></li>
-                        <li><Link>All Doctors</Link></li>
-                        <li><Link>Departments</Link></li>
-                        <li><Link to={'/about'}>About</Link></li>
-                        <li><Link to={'/contact'}>Contact</Link></li>
+                        <li><Link>All Patients</Link></li>
+                        <li><Link>Critical</Link></li>
+                        <li><Link to={'/about'}>Appointments</Link></li>
+                        <li><Link to={'/contact'}>Emergency Cases</Link></li>
 
                         {/* <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li> */}
+                    <details>
+                        <summary>Parent</summary>
+                        <ul className="p-2">
+                            <li><a>Submenu 1</a></li>
+                            <li><a>Submenu 2</a></li>
+                        </ul>
+                    </details>
+                </li> */}
 
                     </ul>
                 </div>
@@ -55,4 +56,4 @@ function Header() {
     )
 }
 
-export default Header
+export default DoctorHeader
