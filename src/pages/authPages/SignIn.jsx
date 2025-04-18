@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { isEmail } from '../../utilities/helperFunctions';
 import { signIn } from '../../services/authAPI';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router';
 
 function SignIn() {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function SignIn() {
     });
 
     const [fieldErrors, setFieldErrors] = useState({});
+
+    const navigate = useNavigate()
 
 
     const handleChange = (e) => {
@@ -49,11 +52,14 @@ function SignIn() {
 
             const res = await signIn(loginData);
             console.log("res", res)
-            // toast.success(res.data.message, { className: 'text-white bg-green-200' })
-            toast.success(res.data.message, {
-                className: '!text-green-800 !bg-green-100 !border !border-green-600',
-            });
 
+            if (res.success) {
+
+                toast.success(res.data.message, {
+                    className: '!text-green-800 !bg-green-100 !border !border-green-600',
+                });
+                navigate(res.redirectTo)
+            }
 
             console.log("Response:", res.data);
         } catch (error) {
