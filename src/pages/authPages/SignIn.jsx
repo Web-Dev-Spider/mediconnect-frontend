@@ -54,10 +54,11 @@ function SignIn() {
             console.log("res", res)
 
             if (res.success) {
-
+                console.log('login successful.. redirecting to dashboard')
                 toast.success(res.data.message, {
                     className: '!text-green-800 !bg-green-100 !border !border-green-600',
                 });
+
                 navigate(res.redirectTo)
             }
 
@@ -81,8 +82,6 @@ function SignIn() {
                         <form onSubmit={handleSubmit}>
                             <fieldset className="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box">
                                 <legend className="fieldset-legend">Login</legend>
-
-
 
                                 <label className="fieldset-label">Username / Email</label>
                                 <input
